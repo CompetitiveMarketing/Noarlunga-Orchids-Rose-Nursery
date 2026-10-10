@@ -1,2122 +1,1256 @@
+
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f8f5ed">
-
-<meta name="description" content="Discover beautiful roses and orchids at Noarlunga Orchids & Rose Nursery. A welcoming destination for flower lovers.">
-
-<title>Noarlunga Orchids & Rose Nursery | A Love of Flowers</title>
-
+<meta name="description" content="Explore beautiful potted roses and orchids at Noarlunga Orchids & Rose Nursery in Seaford Meadows, South Australia.">
+<title>Noarlunga Orchids & Rose Nursery | Roses & Orchids in Seaford Meadows</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   GLOBAL STYLES
-========================= */
-
-:root {
-  --cream: #f8f5ed;
-  --white: #ffffff;
-  --sage: #71856c;
-  --sage-dark: #405d43;
-  --sage-light: #e8eee4;
-  --rose: #bd7e86;
-  --rose-light: #f5e9e9;
-  --ink: #303b30;
-  --muted: #6e766d;
-  --border: #e5e5dc;
-  --max: 1200px;
+:root{
+  --cream:#f8f5ed;
+  --white:#fff;
+  --sage:#71856c;
+  --dark:#405d43;
+  --pale:#e8eee4;
+  --rose:#bd7e86;
+  --pink:#f5e9e9;
+  --ink:#303b30;
+  --muted:#646e63;
+  --border:#e5e5dc;
+  --max:1200px;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  overflow-x:hidden;
 }
-
-html {
-  scroll-behavior: smooth;
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(90%,var(--max));margin:auto}
+section{padding:100px 0}
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  line-height:1.18;
 }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.7;
-  overflow-x: hidden;
+h1{font-size:clamp(3.1rem,6vw,5.8rem)}
+h2{font-size:clamp(2.3rem,4vw,3.65rem)}
+h3{font-size:1.65rem}
+p{color:var(--muted)}
+.eyebrow{
+  display:inline-block;
+  color:var(--rose);
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:18px;
 }
-
-img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
+.section-heading{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 55px;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
+.section-heading p{margin-top:20px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:14px 27px;
+  border-radius:4px;
+  font-size:14px;
+  font-weight:700;
+  border:1px solid transparent;
+  transition:background .25s,transform .25s;
+  text-align:center;
 }
-
-button,
-input,
-textarea {
-  font: inherit;
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--dark);color:white}
+.btn-primary:hover{background:var(--sage)}
+.btn-light{background:white;color:var(--dark)}
+.btn-light:hover{background:var(--cream)}
+.btn-outline{border-color:var(--dark);color:var(--dark)}
+.btn-outline:hover{background:var(--dark);color:white}
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .75s,transform .75s;
 }
-
-button {
-  cursor: pointer;
+.reveal.visible{opacity:1;transform:none}
+.topbar{
+  background:var(--dark);
+  color:white;
+  text-align:center;
+  padding:9px 15px;
+  font-size:11px;
+  letter-spacing:1.4px;
 }
-
-.container {
-  width: min(90%, var(--max));
-  margin: auto;
+header{
+  background:rgba(248,245,237,.98);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
 }
-
-section {
-  padding: 105px 0;
+.nav{
+  min-height:88px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  line-height: 1.2;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-
-h1 {
-  font-size: clamp(3rem, 6vw, 5.7rem);
+.logo-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--sage);
+  border-radius:50%;
+  font-size:28px;
+  color:var(--dark);
 }
-
-h2 {
-  font-size: clamp(2.3rem, 4vw, 3.6rem);
+.logo-text{display:flex;flex-direction:column}
+.logo-text strong{
+  font-family:'Playfair Display',serif;
+  font-size:21px;
+  line-height:1.2;
 }
-
-h3 {
-  font-size: 1.6rem;
+.logo-text small{
+  text-transform:uppercase;
+  font-size:10px;
+  letter-spacing:1.7px;
+  color:var(--sage);
+  margin-top:4px;
 }
-
-p {
-  color: var(--muted);
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
 }
-
-.eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--rose);
-  margin-bottom: 18px;
+.nav-links a{font-size:13px;font-weight:700}
+.nav-links a:hover{color:var(--rose)}
+.nav-links .nav-contact{
+  padding:13px 20px;
+  border-radius:4px;
+  background:var(--dark);
+  color:white;
 }
-
-.section-heading {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 55px;
+.menu-toggle{
+  display:none;
+  background:none;
+  border:0;
+  font-size:28px;
+  color:var(--dark);
 }
-
-.section-heading p {
-  margin-top: 20px;
-  font-size: 16px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 15px 30px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: .3s ease;
-  border: 1px solid transparent;
-  text-align: center;
-}
-
-.btn-primary {
-  background: var(--sage-dark);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--sage);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border-color: var(--sage-dark);
-  color: var(--sage-dark);
-}
-
-.btn-outline:hover {
-  background: var(--sage-dark);
-  color: white;
-}
-
-.btn-light {
-  background: white;
-  color: var(--sage-dark);
-}
-
-.btn-light:hover {
-  background: var(--cream);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   TOP BAR
-========================= */
-
-.topbar {
-  background: var(--sage-dark);
-  color: white;
-  text-align: center;
-  padding: 10px 15px;
-  font-size: 12px;
-  letter-spacing: 1.2px;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-  background: rgba(248,245,237,.97);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-}
-
-.nav {
-  min-height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-}
-
-.logo-icon {
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--sage);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--sage-dark);
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo-text strong {
-  font-family: 'Playfair Display', serif;
-  font-size: 21px;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.logo-text small {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-top: 5px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav-links a {
-  font-size: 13px;
-  font-weight: 600;
-  transition: .2s;
-}
-
-.nav-links a:hover {
-  color: var(--rose);
-}
-
-.nav-links .nav-contact {
-  background: var(--sage-dark);
-  color: white;
-  padding: 13px 20px;
-  border-radius: 4px;
-}
-
-.nav-links .nav-contact:hover {
-  color: white;
-  background: var(--sage);
-}
-
-.menu-toggle {
-  display: none;
-  border: 0;
-  background: transparent;
-  font-size: 28px;
-  color: var(--sage-dark);
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  min-height: 690px;
-  position: relative;
-  display: flex;
-  align-items: center;
+.hero{
+  min-height:690px;
+  display:flex;
+  align-items:center;
+  position:relative;
   background:
-    linear-gradient(
-      90deg,
-      rgba(23,39,25,.82) 0%,
-      rgba(23,39,25,.55) 45%,
-      rgba(23,39,25,.12) 100%
-    ),
-    url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2000&q=85');
-
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-content {
-  max-width: 780px;
-  color: white;
-  padding: 100px 0;
-}
-
-.hero .eyebrow {
-  color: #f2c7ca;
-}
-
-.hero h1 {
-  margin-bottom: 28px;
-}
-
-.hero h1 em {
-  font-weight: 400;
-  color: #f5cfd1;
-}
-
-.hero p {
-  color: rgba(255,255,255,.9);
-  font-size: 18px;
-  max-width: 570px;
-  margin-bottom: 35px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.hero-note {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: var(--cream);
-  padding: 24px 38px;
-  color: var(--sage-dark);
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-}
-
-/* =========================
-   INTRODUCTION
-========================= */
-
-.intro {
-  text-align: center;
-  background: var(--cream);
-}
-
-.intro-inner {
-  max-width: 820px;
-  margin: auto;
-}
-
-.intro-symbol {
-  font-family: 'Playfair Display', serif;
-  font-size: 46px;
-  color: var(--rose);
-  margin-bottom: 20px;
-}
-
-.intro h2 {
-  margin-bottom: 25px;
-}
-
-.intro p {
-  font-size: 17px;
-  line-height: 1.9;
-}
-
-.divider {
-  width: 70px;
-  height: 1px;
-  background: var(--rose);
-  margin: 30px auto;
-}
-
-/* =========================
-   COLLECTIONS
-========================= */
-
-.collections {
-  background: white;
-}
-
-.collection-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 30px;
-}
-
-.collection-card {
-  position: relative;
-  min-height: 570px;
-  overflow: hidden;
-  border-radius: 5px;
-  background: var(--sage-dark);
-}
-
-.collection-card img {
-  height: 570px;
-  transition: transform .8s ease;
-}
-
-.collection-card:hover img {
-  transform: scale(1.06);
-}
-
-.collection-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(18,30,19,.88),
-    rgba(18,30,19,.05) 75%
-  );
-}
-
-.collection-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 45px;
-  z-index: 2;
-  color: white;
-}
-
-.collection-content span {
-  color: #f4c7cb;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.collection-content h3 {
-  font-size: 42px;
-  margin: 12px 0;
-}
-
-.collection-content p {
-  color: rgba(255,255,255,.88);
-  margin-bottom: 25px;
-  max-width: 370px;
-}
-
-.collection-link {
-  display: inline-block;
-  color: white;
-  border-bottom: 1px solid white;
-  padding-bottom: 5px;
-  font-weight: 600;
-}
-
-/* =========================
-   ROSES SECTION
-========================= */
-
-.feature {
-  background: var(--cream);
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 85px;
-}
-
-.feature-image {
-  position: relative;
-}
-
-.feature-image img {
-  height: 620px;
-  border-radius: 4px;
-}
-
-.feature-image::before {
-  content: "";
-  position: absolute;
-  width: 75%;
-  height: 75%;
-  border: 1px solid var(--rose);
-  top: -20px;
-  left: -20px;
-  z-index: -1;
-}
-
-.feature-content h2 {
-  margin-bottom: 25px;
-}
-
-.feature-content p {
-  margin-bottom: 22px;
-  font-size: 16px;
-}
-
-.feature-list {
-  margin: 30px 0;
-  display: grid;
-  gap: 15px;
-}
-
-.feature-list div {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: var(--sage-dark);
-  font-weight: 600;
-}
-
-.feature-list span {
-  color: var(--rose);
-  font-size: 20px;
-}
-
-/* =========================
-   ORCHIDS
-========================= */
-
-.orchids {
-  background: var(--sage-light);
-}
-
-.orchids .feature-grid {
-  direction: rtl;
-}
-
-.orchids .feature-grid > * {
-  direction: ltr;
-}
-
-.orchids .feature-image::before {
-  border-color: var(--sage);
-  left: auto;
-  right: -20px;
-}
-
-/* =========================
-   QUOTE BANNER
-========================= */
-
-.quote-banner {
-  background: var(--sage-dark);
-  color: white;
-  text-align: center;
-  padding: 90px 20px;
-}
-
-.quote-banner h2 {
-  font-size: clamp(2rem,4vw,3.3rem);
-  max-width: 850px;
-  margin: auto;
-  font-style: italic;
-}
-
-.quote-banner p {
-  color: #d5e1d1;
-  margin-top: 25px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery {
-  background: white;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 18px;
-}
-
-.gallery-item {
-  overflow: hidden;
-  border-radius: 4px;
-  position: relative;
-}
-
-.gallery-item img {
-  height: 350px;
-  transition: .6s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.08);
-}
-
-.gallery-item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(30,50,32,.12);
-  pointer-events: none;
-}
-
-.gallery-caption {
-  margin-top: 14px;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  color: var(--sage-dark);
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about {
-  background: var(--rose-light);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 90px;
-  align-items: center;
-}
-
-.about-images {
-  position: relative;
-  padding: 0 45px 45px 0;
-}
-
-.about-images .main {
-  height: 530px;
-  border-radius: 4px;
-}
-
-.about-images .small {
-  width: 230px;
-  height: 250px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border: 8px solid var(--rose-light);
-  border-radius: 4px;
-}
-
-.about-content h2 {
-  margin-bottom: 25px;
-}
-
-.about-content p {
-  margin-bottom: 22px;
-}
-
-.about-signature {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  color: var(--rose);
-  font-style: italic;
-  margin-top: 30px;
-}
-
-/* =========================
-   VISIT
-========================= */
-
-.visit {
-  background: var(--cream);
-}
-
-.visit-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.visit-image img {
-  height: 540px;
-  border-radius: 4px;
-}
-
-.visit-content h2 {
-  margin-bottom: 25px;
-}
-
-.visit-content > p {
-  margin-bottom: 35px;
-}
-
-.visit-info {
-  display: grid;
-  gap: 25px;
-  margin-bottom: 35px;
-}
-
-.info-item {
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-}
-
-.info-item strong {
-  display: block;
-  font-size: 15px;
-  color: var(--sage-dark);
-  margin-bottom: 5px;
-}
-
-.info-item p {
-  font-size: 15px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-  background: white;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 90px;
-  align-items: start;
-}
-
-.contact-intro h2 {
-  margin-bottom: 25px;
-}
-
-.contact-intro p {
-  margin-bottom: 25px;
-}
-
-.contact-note {
-  background: var(--sage-light);
-  padding: 25px;
-  border-left: 3px solid var(--sage);
-  margin-top: 30px;
-}
-
-.contact-note p {
-  color: var(--sage-dark);
-  font-size: 15px;
-}
-
-.contact-form {
-  background: var(--cream);
-  padding: 45px;
-  border-radius: 5px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--sage-dark);
-}
-
+    linear-gradient(90deg,rgba(22,39,25,.89),rgba(22,39,25,.48) 65%,rgba(22,39,25,.22)),
+    url('orchids-colourful.jpg') center 53%/cover no-repeat;
+}
+.hero-content{
+  color:white;
+  max-width:780px;
+  padding:110px 0;
+}
+.hero .eyebrow{color:#f7cbd2}
+.hero h1{margin-bottom:26px}
+.hero h1 em{color:#f5cfd1;font-weight:400}
+.hero p{
+  color:rgba(255,255,255,.94);
+  max-width:570px;
+  font-size:18px;
+  margin-bottom:35px;
+}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px}
+.hero-note{
+  position:absolute;
+  bottom:0;
+  right:0;
+  background:var(--cream);
+  padding:20px 35px;
+  font-family:'Playfair Display',serif;
+  color:var(--dark);
+  font-size:18px;
+}
+.intro{text-align:center}
+.intro-inner{max-width:830px;margin:auto}
+.intro-symbol{
+  font-family:'Playfair Display',serif;
+  font-size:47px;
+  color:var(--rose);
+  margin-bottom:20px;
+}
+.intro h2{margin-bottom:23px}
+.intro p{font-size:17px;line-height:1.95}
+.intro p+p{margin-top:22px}
+.divider{
+  height:1px;
+  width:70px;
+  background:var(--rose);
+  margin:30px auto;
+}
+.collections{background:white}
+.collection-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+.collection-card{
+  min-height:560px;
+  position:relative;
+  overflow:hidden;
+  border-radius:5px;
+  background:var(--dark);
+}
+.collection-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  transition:transform .7s;
+}
+.collection-card:hover img{transform:scale(1.04)}
+.collection-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(16,32,19,.94),rgba(16,32,19,.02) 85%);
+}
+.collection-content{
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:2;
+  padding:42px;
+  color:white;
+}
+.collection-content .eyebrow{color:#f8cfd4}
+.collection-content h3{
+  font-size:43px;
+  margin-bottom:14px;
+}
+.collection-content p{
+  color:#f1f4ee;
+  max-width:390px;
+  margin-bottom:22px;
+}
+.collection-link{
+  color:white;
+  display:inline-block;
+  border-bottom:1px solid white;
+  padding-bottom:5px;
+  font-size:14px;
+  font-weight:700;
+}
+.feature{background:var(--cream)}
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.feature-image{position:relative}
+.feature-image img{
+  height:600px;
+  border-radius:4px;
+}
+.feature-image:before{
+  content:"";
+  position:absolute;
+  top:-19px;
+  left:-19px;
+  width:75%;
+  height:75%;
+  border:1px solid var(--rose);
+  z-index:-1;
+}
+.feature-content h2{margin-bottom:26px}
+.feature-content p{margin-bottom:22px}
+.feature-list{
+  display:grid;
+  gap:13px;
+  margin:28px 0 32px;
+}
+.feature-list div{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--dark);
+  font-weight:600;
+}
+.feature-list span{color:var(--rose);font-size:20px}
+.orchids{background:var(--pale)}
+.orchids .feature-image{order:2}
+.orchids .feature-content{order:1}
+.orchids .feature-image:before{
+  left:auto;
+  right:-19px;
+  border-color:var(--sage);
+}
+.quote-banner{
+  background:var(--dark);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+.quote-banner h2{
+  max-width:850px;
+  margin:auto;
+  font-size:clamp(2rem,4vw,3.3rem);
+  font-style:italic;
+}
+.quote-banner p{
+  color:#d9e5d6;
+  margin-top:24px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:12px;
+}
+.gallery{background:white}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.gallery-item{
+  overflow:hidden;
+  border-radius:4px;
+  background:var(--pale);
+}
+.gallery-item img{
+  height:320px;
+  transition:transform .5s;
+}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-caption{
+  font-family:'Playfair Display',serif;
+  font-size:19px;
+  color:var(--dark);
+  margin-top:12px;
+  text-align:center;
+}
+.gallery-note{
+  text-align:center;
+  margin-top:38px;
+  font-size:14px;
+}
+.about{background:var(--pink)}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:85px;
+  align-items:center;
+}
+.about-images{
+  position:relative;
+  padding:0 40px 40px 0;
+}
+.about-images .main{
+  height:530px;
+  border-radius:4px;
+}
+.about-images .small{
+  position:absolute;
+  width:225px;
+  height:245px;
+  right:0;
+  bottom:0;
+  border:8px solid var(--pink);
+  border-radius:4px;
+}
+.about-content h2{margin-bottom:25px}
+.about-content p{margin-bottom:20px}
+.about-signature{
+  font-family:'Playfair Display',serif;
+  font-size:24px;
+  color:var(--rose);
+  font-style:italic;
+  margin-top:27px;
+}
+.visit{background:var(--cream)}
+.visit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+.visit-content h2{margin-bottom:25px}
+.visit-content>p{margin-bottom:24px}
+.visit-info{margin:32px 0;display:grid;gap:18px}
+.info-item{
+  border-bottom:1px solid var(--border);
+  padding-bottom:17px;
+}
+.info-item strong{
+  display:block;
+  color:var(--dark);
+  margin-bottom:5px;
+}
+.visit-image img{
+  height:560px;
+  border-radius:4px;
+}
+.visit-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.contact{background:white}
+.contact-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:80px;
+}
+.contact-intro h2{margin-bottom:25px}
+.contact-intro p{margin-bottom:22px}
+.contact-details{
+  display:grid;
+  gap:17px;
+  margin:30px 0;
+}
+.contact-details a{
+  color:var(--dark);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.contact-note{
+  background:var(--pale);
+  border-left:3px solid var(--sage);
+  padding:22px;
+  margin-top:26px;
+}
+.contact-note p{color:var(--dark)}
+.contact-form{
+  background:var(--cream);
+  border-radius:5px;
+  padding:42px;
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+.form-group{margin-bottom:20px}
+.form-group label{
+  display:block;
+  font-size:14px;
+  color:var(--dark);
+  font-weight:700;
+  margin-bottom:8px;
+}
 .form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 15px;
-  background: white;
-  border: 1px solid #d8ddd4;
-  border-radius: 3px;
-  color: var(--ink);
-  outline: none;
-  font-size: 15px;
+.form-group select,
+.form-group textarea{
+  width:100%;
+  background:white;
+  border:1px solid #d4dbd0;
+  padding:15px;
+  border-radius:3px;
+  color:var(--ink);
+  font-size:16px;
 }
-
+.form-group textarea{
+  min-height:140px;
+  resize:vertical;
+}
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus {
-  border-color: var(--sage);
+.form-group select:focus{
+  outline:2px solid var(--sage);
+  outline-offset:1px;
 }
-
-.form-group textarea {
-  min-height: 140px;
-  resize: vertical;
+.form-disclaimer{
+  font-size:12px;
+  margin-top:15px;
 }
-
-.form-disclaimer {
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-/* =========================
-   FINAL CTA
-========================= */
-
-.final-cta {
+.final-cta{
   background:
-    linear-gradient(rgba(31,55,34,.82),rgba(31,55,34,.82)),
-    url('https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=1800&q=85');
-
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white;
-  padding: 105px 20px;
+    linear-gradient(rgba(27,49,31,.78),rgba(27,49,31,.82)),
+    url('rose-fairy.jpg') center/cover no-repeat;
+  text-align:center;
+  color:white;
+  padding:100px 20px;
 }
-
-.final-cta h2 {
-  margin-bottom: 20px;
+.final-cta .eyebrow{color:#f6cbd3}
+.final-cta h2{margin-bottom:22px}
+.final-cta p{
+  color:#f0f3ec;
+  max-width:620px;
+  margin:0 auto 30px;
 }
-
-.final-cta p {
-  color: rgba(255,255,255,.88);
-  max-width: 600px;
-  margin: 0 auto 30px;
+footer{
+  background:#273c2b;
+  color:white;
+  padding:70px 0 25px;
 }
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  background: #273c2b;
-  color: white;
-  padding: 70px 0 25px;
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:55px;
+  margin-bottom:60px;
 }
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
+.footer-brand h3{
+  font-size:25px;
+  margin-bottom:20px;
 }
-
-.footer-brand h3 {
-  font-size: 25px;
-  margin-bottom: 20px;
+.footer-brand p{color:#c4d0c1}
+.footer-col h4{
+  font-family:'DM Sans',sans-serif;
+  text-transform:uppercase;
+  font-size:13px;
+  letter-spacing:2px;
+  margin-bottom:23px;
 }
-
-.footer-brand p {
-  color: #c4d0c1;
-  max-width: 340px;
+.footer-col a{
+  display:block;
+  color:#c4d0c1;
+  font-size:14px;
+  margin-bottom:11px;
 }
-
-.footer-col h4 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
+.footer-col a:hover{color:white}
+.footer-col p{color:#c4d0c1;font-size:14px}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:18px;
+  padding-top:25px;
+  border-top:1px solid rgba(255,255,255,.15);
 }
-
-.footer-col a {
-  display: block;
-  color: #c4d0c1;
-  margin-bottom: 12px;
-  font-size: 14px;
+.footer-bottom p{color:#b9c8b5;font-size:12px}
+.footer-bottom a{color:#f0d1d2}
+:focus-visible{
+  outline:3px solid var(--rose);
+  outline-offset:4px;
 }
-
-.footer-col a:hover {
-  color: white;
+@media(max-width:1000px){
+  .nav-links{gap:14px}
+  .nav-links a{font-size:12px}
+  .feature-grid,.about-grid,.visit-grid,.contact-grid{gap:42px}
 }
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.15);
-  padding-top: 25px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.footer-bottom p {
-  color: #aebfac;
-  font-size: 12px;
-}
-
-.footer-bottom a {
-  color: #e3d1c2;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1000px) {
-
-  .nav-links {
-    gap: 15px;
+@media(max-width:800px){
+  section{padding:75px 0}
+  .nav{min-height:76px}
+  .menu-toggle{display:block}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:var(--cream);
+    padding:18px 5% 25px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    box-shadow:0 15px 25px rgba(0,0,0,.08);
   }
-
-  .nav-links a {
-    font-size: 12px;
+  .nav-links.active{display:flex}
+  .nav-links a{
+    font-size:16px;
+    padding:13px 5px;
+    border-bottom:1px solid var(--border);
   }
-
-  .feature-grid,
-  .about-grid,
-  .visit-grid,
-  .contact-grid {
-    gap: 45px;
+  .nav-links .nav-contact{
+    margin-top:14px;
+    text-align:center;
   }
-
-}
-
-@media(max-width:800px) {
-
-  section {
-    padding: 75px 0;
-  }
-
-  .nav {
-    min-height: 78px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--cream);
-    padding: 25px 5%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    box-shadow: 0 15px 25px rgba(0,0,0,.08);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links a {
-    font-size: 16px;
-    padding: 14px 5px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-links .nav-contact {
-    text-align: center;
-    margin-top: 15px;
-  }
-
-  .hero {
-    min-height: 650px;
-    background-position: 60% center;
-  }
-
-  .hero-content {
-    padding: 90px 0;
-  }
-
-  .hero-note {
-    display: none;
-  }
-
+  .hero{min-height:630px}
+  .hero-content{padding:95px 0}
+  .hero-note{display:none}
   .collection-grid,
   .feature-grid,
   .about-grid,
   .visit-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-grid{
+    grid-template-columns:1fr;
   }
-
-  .collection-card,
-  .collection-card img {
-    min-height: 470px;
-    height: 470px;
-  }
-
-  .feature-image img {
-    height: 470px;
-  }
-
-  .orchids .feature-grid {
-    direction: ltr;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .about-images {
-    max-width: 550px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
+  .collection-card{min-height:490px}
+  .feature-image img{height:490px}
+  .orchids .feature-image{order:0}
+  .orchids .feature-content{order:1}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
 }
-
-@media(max-width:550px) {
-
-  .container {
-    width: 90%;
-  }
-
-  .topbar {
-    font-size: 10px;
-    letter-spacing: .5px;
-  }
-
-  .logo-text strong {
-    font-size: 17px;
-  }
-
-  .logo-text small {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 23px;
-  }
-
-  .hero {
-    min-height: 620px;
-  }
-
-  .hero h1 {
-    font-size: 3.3rem;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-  }
-
-  .collection-content {
-    padding: 30px;
-  }
-
-  .collection-content h3 {
-    font-size: 35px;
-  }
-
-  .feature-image img {
-    height: 400px;
-  }
-
-  .feature-image::before {
-    display: none;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .gallery-item img {
-    height: 220px;
-  }
-
-  .gallery-caption {
-    font-size: 15px;
-  }
-
-  .about-images {
-    padding: 0 30px 30px 0;
-  }
-
-  .about-images .main {
-    height: 400px;
-  }
-
-  .about-images .small {
-    width: 150px;
-    height: 170px;
-  }
-
-  .visit-image img {
-    height: 360px;
-  }
-
-  .contact-form {
-    padding: 25px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-  }
-
+@media(max-width:550px){
+  .topbar{font-size:10px;letter-spacing:.5px}
+  .logo-icon{width:40px;height:40px;font-size:23px}
+  .logo-text strong{font-size:17px}
+  .logo-text small{font-size:8px;letter-spacing:1px}
+  .hero{min-height:620px}
+  .hero h1{font-size:clamp(2.8rem,11vw,3.5rem)}
+  .hero p{font-size:16px}
+  .hero-buttons{flex-direction:column}
+  .hero-buttons .btn{width:100%}
+  .collection-card{min-height:460px}
+  .collection-content{padding:27px}
+  .collection-content h3{font-size:35px}
+  .feature-image img{height:400px}
+  .feature-image:before{display:none}
+  .gallery-grid{gap:13px}
+  .gallery-item img{height:210px}
+  .gallery-caption{font-size:16px}
+  .about-images{padding:0 28px 28px 0}
+  .about-images .main{height:410px}
+  .about-images .small{width:150px;height:170px}
+  .visit-image img{height:380px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  .contact-form{padding:25px}
+  .footer-grid{grid-template-columns:1fr;gap:38px}
+  .footer-bottom{flex-direction:column}
 }
-
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  * {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-
 <div class="topbar">
   A BEAUTIFUL WORLD OF ROSES & ORCHIDS
 </div>
 
-<!-- HEADER -->
-
 <header>
-
   <div class="container nav">
-
     <a href="#home" class="logo" aria-label="Noarlunga Orchids and Rose Nursery home">
-
       <div class="logo-icon">✿</div>
-
       <div class="logo-text">
         <strong>Noarlunga Orchids</strong>
         <small>& Rose Nursery</small>
       </div>
-
     </a>
 
-    <button
-      class="menu-toggle"
-      id="menuToggle"
+    <button class="menu-toggle" id="menuToggle"
       aria-label="Open navigation menu"
       aria-expanded="false"
-      aria-controls="navLinks"
-    >
-      ☰
-    </button>
+      aria-controls="navLinks">☰</button>
 
     <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-
       <a href="#home">Home</a>
       <a href="#roses">Our Roses</a>
       <a href="#orchids">Our Orchids</a>
       <a href="#about">About Us</a>
       <a href="#visit">Visit Us</a>
       <a href="#contact" class="nav-contact">Get in Touch</a>
-
     </nav>
-
   </div>
-
 </header>
 
 <main>
 
 <!-- HERO -->
-
 <section class="hero" id="home">
-
   <div class="container">
-
     <div class="hero-content">
-
-      <span class="eyebrow">
-        Welcome to Noarlunga Orchids & Rose Nursery
-      </span>
-
-      <h1>
-        Where Beautiful<br>
-        Flowers <em>Bloom.</em>
-      </h1>
-
+      <span class="eyebrow">Welcome to Noarlunga Orchids & Rose Nursery</span>
+      <h1>Where Beautiful<br>Flowers <em>Bloom.</em></h1>
       <p>
-        Discover the timeless beauty of roses and the delicate
-        elegance of orchids. Two extraordinary flowers,
-        one wonderful place to explore.
+        Discover the timeless beauty of roses and the
+        delicate elegance of orchids. Two extraordinary
+        flowers, one wonderful place to explore.
       </p>
-
       <div class="hero-buttons">
-
-        <a href="#collections" class="btn btn-light">
-          Explore Our Flowers
-        </a>
-
-        <a href="#visit" class="btn btn-outline" style="color:white;border-color:white;">
-          Plan Your Visit
-        </a>
-
+        <a href="#collections" class="btn btn-light">Explore Our Flowers</a>
+        <a href="#visit" class="btn btn-outline"
+          style="color:white;border-color:white">Plan Your Visit</a>
       </div>
-
     </div>
-
   </div>
-
-  <div class="hero-note">
-    A little beauty for every garden.
-  </div>
-
+  <div class="hero-note">A little beauty for every garden.</div>
 </section>
 
-<!-- INTRODUCTION -->
-
+<!-- INTRO -->
 <section class="intro">
-
   <div class="container intro-inner reveal">
-
     <div class="intro-symbol">✿</div>
-
-    <span class="eyebrow">
-      A Warm Welcome
-    </span>
-
-    <h2>
-      A Special Place for<br>
-      Flower Lovers
-    </h2>
-
+    <span class="eyebrow">A Warm Welcome</span>
+    <h2>A Special Place for<br>Flower Lovers</h2>
     <div class="divider"></div>
-
     <p>
       There is something truly wonderful about flowers.
       The colour of a rose in bloom, the graceful shape
       of an orchid, and the simple pleasure they bring
       to our homes and gardens.
     </p>
-
-    <br>
-
     <p>
       At Noarlunga Orchids & Rose Nursery, our focus is
       on two of nature's most beautiful flowers.
       Whether you're a lifelong gardening enthusiast
-      or discovering a new passion, we invite you
-      to explore the beauty of roses and orchids.
+      or discovering a new passion, we invite you to
+      explore the beauty of roses and orchids.
     </p>
-
   </div>
-
 </section>
 
 <!-- COLLECTIONS -->
-
 <section class="collections" id="collections">
-
   <div class="container">
-
     <div class="section-heading reveal">
-
-      <span class="eyebrow">
-        Our Speciality
-      </span>
-
-      <h2>
-        Two Flowers.<br>
-        Endless Beauty.
-      </h2>
-
-         
+      <span class="eyebrow">Our Speciality</span>
+      <h2>Two Flowers.<br>Endless Beauty.</h2>
       <p>
         From romantic roses to elegant orchids,
         discover the flowers that make our nursery special.
       </p>
-
     </div>
 
     <div class="collection-grid">
-
       <a href="#roses" class="collection-card reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=85"
-          alt="Beautiful pink roses in bloom"
-          loading="lazy"
-        >
-
+        <img src="rose-coral.jpg"
+          alt="Beautiful coral and pink rose photographed at the nursery"
+          loading="lazy">
         <div class="collection-content">
-
-          <span>Timeless & Romantic</span>
-
+          <span class="eyebrow">Timeless & Romantic</span>
           <h3>Our Roses</h3>
-
           <p>
             Classic beauty, wonderful colours and the
             unmistakable charm of a rose in bloom.
           </p>
-
-          <span class="collection-link">
-            Discover Our Roses →
-          </span>
-
+          <span class="collection-link">Discover Our Roses →</span>
         </div>
-
       </a>
 
       <a href="#orchids" class="collection-card reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1566907225472-2a0b37c8b78b?auto=format&fit=crop&w=1000&q=85"
-          alt="Elegant orchid flowers"
-          loading="lazy"
-        >
-
+        <img src="orchids-pink.jpg"
+          alt="Pink and white orchids from the nursery"
+          loading="lazy">
         <div class="collection-content">
-
-          <span>Graceful & Extraordinary</span>
-
+          <span class="eyebrow">Graceful & Extraordinary</span>
           <h3>Our Orchids</h3>
-
           <p>
             Delicate flowers with remarkable character,
             bringing elegance to any space.
           </p>
-
-          <span class="collection-link">
-            Discover Our Orchids →
-          </span>
-
+          <span class="collection-link">Discover Our Orchids →</span>
         </div>
-
       </a>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- ROSES -->
-
 <section class="feature" id="roses">
-
   <div class="container">
-
     <div class="feature-grid">
-
       <div class="feature-image reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1496062031456-07b8f162a322?auto=format&fit=crop&w=1100&q=85"
-          alt="Pink rose blossoms"
-          loading="lazy"
-        >
-
+        <img src="rose-lavender.jpg"
+          alt="Beautiful lavender-pink rose"
+          loading="lazy">
       </div>
 
       <div class="feature-content reveal">
-
-        <span class="eyebrow">
-          The Timeless Favourite
-        </span>
-
-        <h2>
-          Fall in Love<br>
-          With Roses.
-        </h2>
-
+        <span class="eyebrow">The Timeless Favourite</span>
+        <h2>Fall in Love<br>With Roses.</h2>
         <p>
           Few flowers are as loved and admired as the rose.
           With their beautiful petals, captivating colours
           and timeless appeal, roses have a special place
           in gardens around the world.
         </p>
-
         <p>
-          Whether you adore soft romantic shades or
-          rich, vibrant blooms, there is always something
+          Whether you adore soft romantic shades or rich,
+          vibrant blooms, there is always something
           wonderful about discovering a beautiful rose.
         </p>
 
         <div class="feature-list">
-
-          <div>
-            <span>✿</span>
-            Timeless floral beauty
-          </div>
-
-          <div>
-            <span>✿</span>
-            A wonderful addition to gardens
-          </div>
-
-          <div>
-            <span>✿</span>
-            Perfect for rose enthusiasts
-          </div>
-
+          <div><span>✿</span> Beautiful colours and varieties</div>
+          <div><span>✿</span> A wonderful addition to gardens</div>
+          <div><span>✿</span> Perfect for rose enthusiasts</div>
         </div>
 
         <a href="#contact" class="btn btn-primary">
           Enquire About Roses
         </a>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- ORCHIDS -->
-
 <section class="feature orchids" id="orchids">
-
   <div class="container">
-
     <div class="feature-grid">
-
       <div class="feature-image reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=1100&q=85"
-          alt="Delicate orchid flowers"
-          loading="lazy"
-        >
-
+        <img src="orchids-colourful.jpg"
+          alt="A colourful display of orchids"
+          loading="lazy">
       </div>
 
       <div class="feature-content reveal">
-
-        <span class="eyebrow">
-          Nature's Elegant Wonder
-        </span>
-
-        <h2>
-          Discover the<br>
-          Beauty of Orchids.
-        </h2>
-
+        <span class="eyebrow">Nature's Elegant Wonder</span>
+        <h2>Discover the<br>Beauty of Orchids.</h2>
         <p>
           Orchids are truly extraordinary flowers.
-          Their graceful shapes, delicate details
-          and striking blooms make them a favourite
+          Their graceful shapes, delicate details and
+          striking blooms make them a favourite
           among plant lovers.
         </p>
-
         <p>
           From their fascinating forms to their
-          beautiful colours, orchids bring a
-          special touch of natural elegance
-          wherever they are enjoyed.
+          beautiful colours, orchids bring a special
+          touch of natural elegance wherever
+          they are enjoyed.
         </p>
 
         <div class="feature-list">
-
-          <div>
-            <span>✿</span>
-            Graceful and distinctive blooms
+          <div><span>✿</span> Graceful and distinctive blooms</div>
+          <div><span>✿</span> Beautiful floral displays</div>
+          <div><span>✿</span> A delight for orchid enthusiasts
           </div>
-
-          <div>
-            <span>✿</span>
-            Beautiful floral displays
-          </div>
-
-          <div>
-            <span>✿</span>
-            A delight for orchid lovers
-          </div>
-
         </div>
 
         <a href="#contact" class="btn btn-primary">
           Enquire About Orchids
         </a>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-<!-- QUOTE -->
-
+<!-- QUOTE BANNER -->
 <section class="quote-banner">
-
   <div class="container reveal">
-
     <h2>
-      “To plant a garden is to believe in tomorrow.”
+      “There is always room for a little more beauty
+      in the garden.”
     </h2>
-
-    <p>
-      A Thought for Every Garden Lover
-    </p>
-
+    <p>Roses, Orchids & the Joy of Growing</p>
   </div>
-
 </section>
 
 <!-- GALLERY -->
-
 <section class="gallery" id="gallery">
-
   <div class="container">
-
     <div class="section-heading reveal">
-
-      <span class="eyebrow">
-        A Little Floral Inspiration
-      </span>
-
-      <h2>
-        The Beauty Is<br>
-        in the Details.
-      </h2>
-
+      <span class="eyebrow">A Closer Look</span>
+      <h2>Beautiful Blooms,<br>Wonderful Colours.</h2>
       <p>
-        Take a moment to enjoy the wonderful
-        colours, shapes and delicate details
-        of roses and orchids.
+        Enjoy a little glimpse of the roses and orchids
+        that make Noarlunga Orchids & Rose Nursery special.
       </p>
-
     </div>
 
     <div class="gallery-grid">
 
       <div class="reveal">
-
         <div class="gallery-item">
-
-          <img
-            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=85"
-            alt="Soft pink flowers"
-            loading="lazy"
-          >
-
+          <img src="rose-crimson.webp"
+            alt="Rich crimson rose in bloom"
+            loading="lazy">
         </div>
-
-        <div class="gallery-caption">
-          Romantic Blooms
-        </div>
-
+        <div class="gallery-caption">Crimson Beauty</div>
       </div>
 
       <div class="reveal">
-
         <div class="gallery-item">
-
-          <img
-            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=85"
-            alt="Pink rose flowers"
-            loading="lazy"
-          >
-
+          <img src="rose-striped.jpg"
+            alt="Yellow and pink striped rose"
+            loading="lazy">
         </div>
-
-        <div class="gallery-caption">
-          Beautiful Roses
-        </div>
-
+        <div class="gallery-caption">Colourful Roses</div>
       </div>
 
       <div class="reveal">
-
         <div class="gallery-item">
-
-          <img
-            src="https://images.unsplash.com/photo-1566907225472-2a0b37c8b78b?auto=format&fit=crop&w=800&q=85"
-            alt="Orchid blossoms"
-            loading="lazy"
-          >
-
+          <img src="orchids-pink.jpg"
+            alt="Delicate pink orchids"
+            loading="lazy">
         </div>
-
-        <div class="gallery-caption">
-          Elegant Orchids
-        </div>
-
+        <div class="gallery-caption">Delicate Orchids</div>
       </div>
 
       <div class="reveal">
-
         <div class="gallery-item">
-
-          <img
-            src="https://images.unsplash.com/photo-1496062031456-07b8f162a322?auto=format&fit=crop&w=800&q=85"
-            alt="Rose petals"
-            loading="lazy"
-          >
-
+          <img src="rose-fairy.jpg"
+            alt="Clusters of soft pink roses"
+            loading="lazy">
         </div>
-
-        <div class="gallery-caption">
-          Timeless Colour
-        </div>
-
+        <div class="gallery-caption">The Fairy Rose</div>
       </div>
 
       <div class="reveal">
-
         <div class="gallery-item">
-
-          <img
-            src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=800&q=85"
-            alt="Orchid flowers"
-            loading="lazy"
-          >
-
+          <img src="rose-orange.jpg"
+            alt="Bright orange roses growing together"
+            loading="lazy">
         </div>
-
-        <div class="gallery-caption">
-          Natural Elegance
-        </div>
-
+        <div class="gallery-caption">Warm & Vibrant</div>
       </div>
 
       <div class="reveal">
-
         <div class="gallery-item">
-
-          <img
-            src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=800&q=85"
-            alt="Flowers in bloom"
-            loading="lazy"
-          >
-
+          <img src="orchids-colourful.jpg"
+            alt="Colourful orchids in shades of pink, yellow and purple"
+            loading="lazy">
         </div>
+        <div class="gallery-caption">Orchid Colours</div>
+      </div>
 
-        <div class="gallery-caption">
-          Floral Beauty
+      <div class="reveal">
+        <div class="gallery-item">
+          <img src="rose-best-friend.jpg"
+            alt="Bright pink rose in bloom"
+            loading="lazy">
         </div>
+        <div class="gallery-caption">Best Friend</div>
+      </div>
 
+      <div class="reveal">
+        <div class="gallery-item">
+          <img src="rose-coral.jpg"
+            alt="Coral-pink rose in bloom"
+            loading="lazy">
+        </div>
+        <div class="gallery-caption">Soft Coral</div>
+      </div>
+
+      <div class="reveal">
+        <div class="gallery-item">
+          <img src="rose-lavender.jpg"
+            alt="Lavender-pink rose with delicate petals"
+            loading="lazy">
+        </div>
+        <div class="gallery-caption">Lavender Elegance</div>
       </div>
 
     </div>
 
+    <p class="gallery-note">
+      Please get in touch to ask about current rose and orchid availability.
+    </p>
   </div>
-
 </section>
 
 <!-- ABOUT -->
-
 <section class="about" id="about">
-
   <div class="container">
-
     <div class="about-grid">
 
       <div class="about-images reveal">
+        <img class="main"
+          src="rose-fairy.jpg"
+          alt="Beautiful clusters of pink roses"
+          loading="lazy">
 
-        <img
-          class="main"
-          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1100&q=85"
-          alt="A peaceful garden setting"
-          loading="lazy"
-        >
-
-        <img
-          class="small"
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=85"
-          alt="Beautiful rose blossoms"
-          loading="lazy"
-        >
-
+        <img class="small"
+          src="orchids-pink.jpg"
+          alt="Pretty pink orchids"
+          loading="lazy">
       </div>
 
       <div class="about-content reveal">
+        <span class="eyebrow">A Love of Flowers</span>
 
-        <span class="eyebrow">
-          A Love of Flowers
-        </span>
-
-        <h2>
-          Welcome to<br>
-          Our Little Corner<br>
-          of Nature.
-        </h2>
+        <h2>A Nursery With<br>a Personal Touch.</h2>
 
         <p>
-          At Noarlunga Orchids & Rose Nursery,
-          our name says it all.
+          At Noarlunga Orchids & Rose Nursery, it's
+          all about appreciating the wonderful beauty
+          of roses and orchids.
         </p>
 
         <p>
-          We celebrate the beauty of two
-          truly special flowers — roses
-          and orchids.
+          From the rich colours of a blooming rose
+          to the intricate details of an orchid,
+          these flowers have a special way of
+          brightening everyday life.
         </p>
 
         <p>
-          There is something rewarding about
-          watching flowers grow, seeing
-          the first signs of a new bloom,
-          and enjoying the colour and
-          character they bring.
-        </p>
-
-        <p>
-          Whether you're searching for
-          something lovely for your garden
-          or simply enjoy being surrounded
-          by beautiful flowers, we look
-          forward to welcoming you.
+          Whether you're looking for something
+          beautiful for your garden, a thoughtful
+          gift or simply exploring your love of
+          flowers, we'd love to hear from you.
         </p>
 
         <div class="about-signature">
-          With a love for all things floral.
+          With a love for all things blooming.
         </div>
 
+        <div style="margin-top:30px">
+          <a href="#contact" class="btn btn-primary">
+            Get in Touch
+          </a>
+        </div>
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- VISIT -->
-
 <section class="visit" id="visit">
-
   <div class="container">
-
     <div class="visit-grid">
 
       <div class="visit-content reveal">
+        <span class="eyebrow">Find Us</span>
 
-        <span class="eyebrow">
-          Come and Say Hello
-        </span>
-
-        <h2>
-          We'd Love<br>
-          to Welcome You.
-        </h2>
+        <h2>Come Discover<br>Something Beautiful.</h2>
 
         <p>
-          There's nothing quite like seeing
-          beautiful flowers up close.
+          Noarlunga Orchids & Rose Nursery is based
+          in Seaford Meadows, South Australia.
         </p>
 
         <p>
-          If you're interested in our roses
-          or orchids, please get in touch
-          to find out more about visiting
-          the nursery.
+          Interested in visiting or finding out
+          what roses and orchids are currently
+          available? Get in touch before making
+          the trip to confirm visiting arrangements.
         </p>
 
         <div class="visit-info">
 
           <div class="info-item">
-
-            <strong>
-              Our Nursery
-            </strong>
-
-            <p>
-              Noarlunga Orchids & Rose Nursery<br>
-              South Australia
-            </p>
-
+            <strong>Our Location</strong>
+            <p>Seaford Meadows, South Australia</p>
           </div>
 
           <div class="info-item">
-
-            <strong>
-              Visiting Information
-            </strong>
-
-            <p>
-              Please contact the nursery
-              to confirm visiting arrangements
-              and opening hours.
-            </p>
-
+            <strong>What We Specialise In</strong>
+            <p>Potted roses and beautiful orchids.</p>
           </div>
 
           <div class="info-item">
-
-            <strong>
-              What You'll Find
-            </strong>
-
+            <strong>Visiting & Availability</strong>
             <p>
-              A nursery dedicated to
-              beautiful roses and orchids.
+              Please contact the nursery to confirm
+              current availability and visiting details.
             </p>
-
           </div>
 
         </div>
 
-        <a href="#contact" class="btn btn-primary">
-          Contact the Nursery
-        </a>
+        <div class="visit-buttons">
+          <a href="https://www.google.com/maps/search/?api=1&query=Noarlunga+Orchids+%26+Rose+Nursery+Seaford+Meadows"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer">
+            Find Us on Google Maps
+          </a>
 
+          <a href="#contact" class="btn btn-outline">
+            Contact the Nursery
+          </a>
+        </div>
       </div>
 
       <div class="visit-image reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1100&q=85"
-          alt="Beautiful flowers in a garden"
-          loading="lazy"
-        >
-
+        <img src="rose-orange.jpg"
+          alt="Vibrant orange roses"
+          loading="lazy">
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- CONTACT -->
-
 <section class="contact" id="contact">
-
   <div class="container">
 
     <div class="contact-grid">
 
       <div class="contact-intro reveal">
+        <span class="eyebrow">We'd Love to Hear From You</span>
 
-        <span class="eyebrow">
-          Get in Touch
-        </span>
-
-        <h2>
-          Have a Question?<br>
-          We'd Love to Hear<br>
-          From You.
-        </h2>
+        <h2>Let's Talk<br>Flowers.</h2>
 
         <p>
-          Looking for a particular rose?
-          Interested in orchids?
-          Or simply have a question
-          about the nursery?
+          Have a question about our roses or orchids?
+          Looking for a particular colour or hoping
+          to find something special?
         </p>
 
         <p>
-          Send us a message and we'll
-          be happy to help where we can.
+          Send us a message and tell us what
+          you're looking for.
         </p>
+
+        <div class="contact-details">
+          <div>
+            <strong>Location</strong>
+            <p>Seaford Meadows, South Australia</p>
+          </div>
+
+          <div>
+            <strong>Our Flowers</strong>
+            <p>Roses & Orchids</p>
+          </div>
+        </div>
 
         <div class="contact-note">
-
           <p>
-            <strong>A friendly reminder:</strong><br>
-            Flower availability may vary.
-            Please enquire about the
-            varieties you're interested in.
+            <strong>A little note:</strong>
+            This website is a demonstration concept.
+            Contact details, visiting arrangements
+            and flower availability will be confirmed
+            before the website goes live.
           </p>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="enquiryForm">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="fullName">Your Name *</label>
+            <input type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Your name"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required>
+          </div>
 
         </div>
 
-      </div>
-
-      <div class="contact-form reveal">
-
-        <form id="enquiryForm">
-
-          <div class="form-row">
-
-            <div class="form-group">
-
-              <label for="name">
-                Your Name
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                required
-              >
-
-            </div>
-
-            <div class="form-group">
-
-              <label for="email">
-                Email Address
-              </label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your email"
-                required
-              >
-
-            </div>
-
-          </div>
+        <div class="form-row">
 
           <div class="form-group">
-
-            <label for="phone">
-              Phone Number (Optional)
-            </label>
-
-            <input
-              type="tel"
+            <label for="phone">Phone Number</label>
+            <input type="tel"
               id="phone"
               name="phone"
-              placeholder="Your phone number"
-            >
-
+              autocomplete="tel"
+              placeholder="Your phone number">
           </div>
 
           <div class="form-group">
-
-            <label for="interest">
-              What Are You Interested In?
-            </label>
-
-            <select
-              id="interest"
-              name="interest"
-              required
-            >
-
-              <option value="">
-                Please select
-              </option>
-
-              <option value="Roses">
-                Roses
-              </option>
-
-              <option value="Orchids">
-                Orchids
-              </option>
-
-              <option value="Visiting the Nursery">
-                Visiting the Nursery
-              </option>
-
-              <option value="General Enquiry">
-                General Enquiry
-              </option>
-
+            <label for="interest">I'm Interested In *</label>
+            <select id="interest" name="interest" required>
+              <option value="">Please select</option>
+              <option value="Roses">Roses</option>
+              <option value="Orchids">Orchids</option>
+              <option value="Both">Both</option>
+              <option value="General Enquiry">General Enquiry</option>
             </select>
-
           </div>
 
-          <div class="form-group">
+        </div>
 
-            <label for="message">
-              Your Message
-            </label>
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell us what you're looking for..."
+            required></textarea>
+        </div>
 
-            <textarea
-              id="message"
-              name="message"
-              placeholder="How can we help you?"
-              required
-            ></textarea>
+        <button type="submit" class="btn btn-primary"
+          style="width:100%">
+          Prepare My Enquiry
+        </button>
 
-          </div>
+        <p class="form-disclaimer">
+          Demo form only. Enquiries will be connected
+          to the nursery's preferred email address
+          before launch.
+        </p>
 
-          <button
-            type="submit"
-            class="btn btn-primary"
-            style="width:100%;"
-          >
-            Send Your Enquiry
-          </button>
+        <p id="formStatus"
+          role="status"
+          aria-live="polite"
+          style="margin-top:15px;font-size:14px"></p>
 
-          <p class="form-disclaimer">
-            Demo form only — enquiry delivery
-            will be activated when the website
-            is finalised.
-          </p>
-
-        </form>
-
-      </div>
+      </form>
 
     </div>
-
   </div>
-
 </section>
 
-<!-- FINAL CTA -->
-
+<!-- FINAL CALL TO ACTION -->
 <section class="final-cta">
-
   <div class="container reveal">
 
-    <span class="eyebrow" style="color:#f3d4d5;">
-      Noarlunga Orchids & Rose Nursery
-    </span>
+    <span class="eyebrow">The Beauty of Nature</span>
 
-    <h2>
-      A Little More Beauty<br>
-      in Every Day.
-    </h2>
+    <h2>Bring a Little More<br>Beauty Into Your World.</h2>
 
     <p>
-      Discover the timeless charm of roses
-      and the extraordinary elegance of orchids.
+      Discover beautiful roses and orchids
+      and enjoy the simple pleasure of flowers
+      that make you smile.
     </p>
 
     <a href="#contact" class="btn btn-light">
-      Get in Touch
+      Enquire Today
     </a>
 
   </div>
-
 </section>
 
 </main>
 
 <!-- FOOTER -->
-
 <footer>
-
   <div class="container">
 
     <div class="footer-grid">
 
       <div class="footer-brand">
-
-        <h3>
-          Noarlunga Orchids<br>
-          & Rose Nursery
-        </h3>
-
+        <h3>Noarlunga Orchids<br>& Rose Nursery</h3>
         <p>
-          Celebrating the beauty of roses
-          and orchids, and the simple joy
-          that flowers bring to everyday life.
+          Celebrating the beauty of roses and orchids
+          in Seaford Meadows, South Australia.
         </p>
-
       </div>
 
       <div class="footer-col">
-
-        <h4>
-          Explore
-        </h4>
-
+        <h4>Explore</h4>
         <a href="#home">Home</a>
         <a href="#roses">Our Roses</a>
         <a href="#orchids">Our Orchids</a>
+        <a href="#gallery">Flower Gallery</a>
         <a href="#about">About Us</a>
-        <a href="#gallery">Gallery</a>
-
       </div>
 
       <div class="footer-col">
-
-        <h4>
-          Visit & Contact
-        </h4>
-
-        <a href="#visit">Visit Our Nursery</a>
-        <a href="#contact">Contact Us</a>
-
-        <p style="font-size:14px;color:#c4d0c1;margin-top:20px;">
-          South Australia
-        </p>
-
+        <h4>Get in Touch</h4>
+        <p>Seaford Meadows, SA</p>
+        <a href="#visit">Plan Your Visit</a>
+        <a href="#contact">Send an Enquiry</a>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-
       <p>
         © <span id="year"></span>
         Noarlunga Orchids & Rose Nursery.
@@ -2125,130 +1259,76 @@ footer {
 
       <p>
         Website concept by
-        <a
-          href="https://competitivemarketing.github.io/"
+        <a href="https://competitivemarketing.github.io/"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Competitive Marketing
         </a>
       </p>
-
     </div>
 
   </div>
-
 </footer>
 
 <script>
-
-/* =========================
-   MOBILE NAVIGATION
-========================= */
-
+/* MOBILE NAVIGATION */
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
 menuToggle.addEventListener('click', () => {
-
   const isOpen = navLinks.classList.toggle('active');
 
-  menuToggle.setAttribute(
-    'aria-expanded',
-    String(isOpen)
-  );
-
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
   menuToggle.setAttribute(
     'aria-label',
     isOpen ? 'Close navigation menu' : 'Open navigation menu'
   );
 
   menuToggle.textContent = isOpen ? '✕' : '☰';
-
 });
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-
+navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-
     navLinks.classList.remove('active');
-
     menuToggle.setAttribute('aria-expanded', 'false');
-
-    menuToggle.setAttribute(
-      'aria-label',
-      'Open navigation menu'
-    );
-
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
     menuToggle.textContent = '☰';
-
   });
-
 });
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* REVEAL ANIMATIONS */
+const revealElements = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
-
   const observer = new IntersectionObserver(entries => {
-
     entries.forEach(entry => {
-
       if (entry.isIntersecting) {
-
         entry.target.classList.add('visible');
-
         observer.unobserve(entry.target);
-
       }
-
     });
-
   }, {
     threshold: 0.08
   });
 
-  document.querySelectorAll('.reveal').forEach(el => {
-
-    observer.observe(el);
-
-  });
-
+  revealElements.forEach(element => observer.observe(element));
 } else {
-
-  document.querySelectorAll('.reveal').forEach(el => {
-
-    el.classList.add('visible');
-
-  });
-
+  revealElements.forEach(element => element.classList.add('visible'));
 }
 
-/* =========================
-   FOOTER YEAR
-========================= */
-
+/* COPYRIGHT YEAR */
 document.getElementById('year').textContent =
   new Date().getFullYear();
 
-/* =========================
-   DEMO CONTACT FORM
-========================= */
-
-document.getElementById('enquiryForm').addEventListener('submit', function(event) {
-
+/* DEMO ENQUIRY FORM */
+document.getElementById('enquiryForm').addEventListener('submit', event => {
   event.preventDefault();
 
-  alert(
-    'Thank you for your interest! This is a demonstration website. ' +
-    'The enquiry form will be connected to the nursery when the website is finalised.'
-  );
-
+  document.getElementById('formStatus').textContent =
+    'Thank you! This is a demonstration form. ' +
+    'Enquiry delivery will be activated once the nursery confirms its preferred contact email.';
 });
-
 </script>
 
 </body>
-</html>   
+</html>
